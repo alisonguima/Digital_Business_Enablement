@@ -2,7 +2,7 @@ package loja.desconto;
 
 import java.math.BigDecimal;
 
-import loja.Pedido;
+import loja.PedidoInterface;
 
 public abstract class Desconto {
 	
@@ -12,12 +12,12 @@ public abstract class Desconto {
 		this.proximo = proximo;
 	}
 
-	public BigDecimal calcular(Pedido pedido) {
+	public BigDecimal calcular(PedidoInterface pedido) {
 		if (deveAplicar(pedido)) return aplicar(pedido);
 		return proximo.calcular(pedido);
 	}
 
-	protected abstract BigDecimal aplicar(Pedido pedido);
-	protected abstract boolean deveAplicar(Pedido pedido);
+	protected abstract BigDecimal aplicar(PedidoInterface pedido);
+	protected abstract boolean deveAplicar(PedidoInterface pedido);
 
 }

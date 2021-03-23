@@ -3,7 +3,7 @@ package loja.desconto;
 
 import java.math.BigDecimal;
 
-import loja.Pedido;
+import loja.PedidoInterface;
 
 public class DescontoPorQuantidade extends Desconto{
 
@@ -12,12 +12,12 @@ public class DescontoPorQuantidade extends Desconto{
 	}
 
 	@Override
-	public BigDecimal aplicar(Pedido pedido) {
+	public BigDecimal aplicar(PedidoInterface pedido) {
 		return pedido.getValor().multiply(new BigDecimal("0.05"));
 	}
 
 	@Override
-	protected boolean deveAplicar(Pedido pedido) {
+	protected boolean deveAplicar(PedidoInterface pedido) {
 		return pedido.getTotalDeItens() > 10;
 	}
 

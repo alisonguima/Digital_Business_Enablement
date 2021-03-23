@@ -1,6 +1,6 @@
 package loja.situacao;
 
-import loja.Pedido;
+import loja.PedidoInterface;
 
 public class Cancelado extends Situacao {
 
@@ -10,7 +10,7 @@ public class Cancelado extends Situacao {
 	}
 
 	@Override
-	public void reabrir(Pedido pedido) {
+	public void reabrir(PedidoInterface pedido) {
 		pedido.setSituacao(new Aberto());
 	}
 }
