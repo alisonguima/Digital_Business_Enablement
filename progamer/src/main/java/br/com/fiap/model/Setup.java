@@ -42,9 +42,15 @@ public class Setup {
 	public void setPrice(BigDecimal price) {
 		this.price = price;
 	}
+	
+	public Long getId() {
+		return id;
+	}
 
 	@Override
 	public String toString() {
 		return "Setup [name=" + name + ", description=" + description + ", price=" + price + "]";
-	}	
+	}
+	
+	
 }

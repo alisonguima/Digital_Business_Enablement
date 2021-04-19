@@ -1,25 +1,30 @@
 package br.com.fiap.dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
 
 import br.com.fiap.model.Setup;
+import br.com.fiap.util.EntityManagerFacade;
 
 public class SetupDAO {
+	
+	private EntityManager manager = EntityManagerFacade.get();
 
 	public void save(Setup setup) {
-		
-		EntityManagerFactory factory = 
-				Persistence.createEntityManagerFactory("progamer-persistence-unit");
-		EntityManager manager = factory.createEntityManager();
-		
 		manager.getTransaction().begin();
 		manager.persist(setup);
 		manager.getTransaction().commit();
 		
 		manager.close();
 		
+	}
+
+	public List<Setup> getAll() {
+		String jpql = "SELECT s from Setup s";
+		TypedQuery<Setup> createQuery = manager.createQuery(jpql, Setup.class);
+		return createQuery.getResultList();
 	}
 
 	
