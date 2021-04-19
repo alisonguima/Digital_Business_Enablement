@@ -15,15 +15,15 @@
 		<h:form class="card-form">
 			<!-- CARD -->
 			<p:card style="width: 25em">
-				<h2 style="padding: 0 1rem; margin-top: 0;">Novo Usuário</h2>
+				<h2 style="padding: 0 1rem; margin-top: 0;">New User</h2>
 				<p:panelGrid columns="2" layout="grid"
 					columnClasses="ui-g-4, ui-g-8">
-					<p:outputLabel value="Nome" for="name" />
+					<p:outputLabel value="Name" for="name" />
 					<p:inputText id="name" value="#{userBean.user.name}"
 						required="true">
 						<f:ajax event="blur" render="messages" />
 					</p:inputText>
-					<p:outputLabel value="Data de nascimento" for="birth" />
+					<p:outputLabel value="Birthdate" for="birth" />
 					<p:datePicker id="birth" value="#{userBean.user.birthdate}"
 						monthNavigator="true" yearNavigator="true" yearRange="1950:2021"
 						required="true" />
@@ -33,7 +33,7 @@
 						<f:validateRegex pattern="[\w\.]+@[\w\.]+\.[\w\.]+" />
 						<f:ajax event="blur" render="messages" />
 					</p:inputText>
-					<p:outputLabel value="Senha" for="password" />
+					<p:outputLabel value="Password" for="password" />
 					<p:password id="password" value="#{userBean.user.password}"
 						required="true">
 						<f:validateLength minimum="6" />
@@ -57,12 +57,12 @@
 				<p:dataTable id="users" var="user" value="#{userBean.users}"
 					rowKey="#{user.id}" selectionMode="single">
 					<f:facet name="header">
-                        Lista de Usuários
+                        Users List
                     </f:facet>
-					<p:column headerText="Nome">
+					<p:column headerText="Name">
 						<h:outputText value="#{user.name}" />
 					</p:column>
-					<p:column headerText="Data de nascimento">
+					<p:column headerText="Birthdate">
 						<h:outputText value="#{user.birthdate}" />
 					</p:column>
 					<p:column headerText="Email">
