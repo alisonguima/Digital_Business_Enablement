@@ -8,7 +8,8 @@ public class EntityManagerFacade {
 	
 	public static EntityManager get() {
 		EntityManagerFactory factory = 
-				Persistence.createEntityManagerFactory("mysql");
+				Persistence.createEntityManagerFactory("progamer-persistence-unit");
 		return factory.createEntityManager();
 	}
+
 }

@@ -2,11 +2,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>br.com.fiap</groupId>
-  <artifactId>checkpoint</artifactId>
+  <artifactId>progamer</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>war</packaging>
   <build>
-    <finalName>checkpoint</finalName>
+    <finalName>progamer</finalName>
   </build>
   <properties>
     <failOnMissingWebXml>false</failOnMissingWebXml>
@@ -44,6 +44,16 @@
 		<dependency>
       <groupId>javax.enterprise</groupId>
       <artifactId>cdi-api</artifactId>
+      <scope>provided</scope>
+    </dependency>
+		<dependency>
+      <groupId>org.jboss.spec.javax.servlet</groupId>
+      <artifactId>jboss-servlet-api_3.0_spec</artifactId>
+      <scope>provided</scope>
+    </dependency>
+		<dependency>
+      <groupId>org.jboss.spec.javax.ws.rs</groupId>
+      <artifactId>jboss-jaxrs-api_1.1_spec</artifactId>
       <scope>provided</scope>
     </dependency>
 

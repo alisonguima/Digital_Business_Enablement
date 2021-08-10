@@ -2,28 +2,18 @@ package br.com.fiap.model;
 
 import java.math.BigDecimal;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 @Entity
-@Table(name = "TB_SETUP")
 public class Setup {
 	
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "ID_SETUP")
 	private Long id;
-	
-	@Column(name = "NM_SETUP", nullable = false, length = 30)
 	private String name;
-	
-	@Column(name = "DS_SETUP", nullable = false, length = 255)
 	private String description;
-	
-	@Column(name = "VL_SETUP", nullable = false)
 	private BigDecimal price = new BigDecimal(1000);
 
 	public Setup() {
@@ -60,6 +50,10 @@ public class Setup {
 	@Override
 	public String toString() {
 		return "Setup [name=" + name + ", description=" + description + ", price=" + price + "]";
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 	
 	
